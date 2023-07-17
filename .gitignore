@@ -1,41 +1,58 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
-
 # Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
 /wp-admin/
 /wp-content/index.php
+/wp-content/ai1wm-backups/
 /wp-content/languages
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
+/wp-content/uploads/
+/wp-content/blogs.dir/
+/wp-content/upgrade/*
+/wp-content/backup-db/*
+/wp-content/advanced-cache.php
+/wp-content/wp-cache-config.php
+/wp-content/cache/*
+/wp-content/cache/supercache/*
 /wp-includes/
 /index.php
 /license.txt
 /readme.html
 /wp-*.php
 /xmlrpc.php
-/local-xdebuginfo.php
 
 # Configuration
-wp-config.php
+/wp-config.php
 
-# All plugins
-/wp-content/plugins/*
-
-# All themes
+# Themes and Plugins
 /wp-content/themes/*
-!wp-content/themes/ollie
-
-# Uploads
-/wp-content/uploads/
-
-# ignore node dependency directories
-node_modules/
+/wp-content/plugins/*
+/wp-content/mu-plugins/*
+!wp-content/themes/ollie/
 
 # Log files
 *.log
+*.sql
+*.sqlite
+.DS_Store
+fsestudio-data.json
 
 # htaccess
-/.htaccess
+.htaccess
+
+# WP Engine
+.wpe-devkit/
+.wpe-pull-ignore
+.wpe-push-ignore
+.wpengine-conf/
+_wpeprivate/
+
+# Local
+local-xdebuginfo.php
+favicon.ico
+apple-touch-icon.png
+apple-touch-icon-precomposed.png
+
+# Other
+.tmb
+.DS_Store
+node_modules
