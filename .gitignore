@@ -31,6 +31,9 @@ wp-config.php
 # Uploads
 /wp-content/uploads/
 
+# ignore node dependency directories
+node_modules/
+
 # Log files
 *.log
 
