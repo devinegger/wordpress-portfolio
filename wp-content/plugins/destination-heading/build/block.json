@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/destination-heading",
+  "version": "0.1.0",
+  "title": "Destination Heading",
+  "category": "widgets",
+  "icon": "admin-comments",
+  "description": "A two part heading that is composed of an editable heading witha >> icon and then a second heading that is predefined and animated",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "selector": "destination-heading-editable"
+    },
+    "destination": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "destination-heading",
+  "viewScript": "file:script.js",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:index.css",
+  "style": "file:style-index.css"
+}

@@ -28,6 +28,8 @@
 /wp-content/plugins/*
 /wp-content/mu-plugins/*
 !wp-content/themes/ollie/
+!wp-content/plugins/destination-heading
+!wp-content/plugins/faq-accordion
 
 # Log files
 *.log
