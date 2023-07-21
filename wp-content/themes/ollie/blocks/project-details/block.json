@@ -1,0 +1,15 @@
+
+{
+    "name": "acf/project-details",
+    "title": "Project Details",
+    "description": "A custom block to show project details",
+    "style": [ "file:./project-details.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["testimonial", "quote"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "project-details.php"
+    },
+    "align": ["full", "none"]
+}

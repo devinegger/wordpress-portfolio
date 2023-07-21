@@ -1,0 +1,12 @@
+.project-details-block {
+    width: 100%;
+
+    .type p {
+        text-align: center;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+    }
+}

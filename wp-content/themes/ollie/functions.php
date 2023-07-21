@@ -200,3 +200,12 @@ function is_paginated() {
 	}
 }
 add_action( 'wp_head', __NAMESPACE__ . '\is_paginated' );
+
+/**
+ * Register Custom ACF Blocks
+ */
+
+add_action( 'init', __NAMESPACE__ . '\register_acf_blocks' );
+function register_acf_blocks() {
+	register_block_type( __DIR__ . '/blocks/project-details' );
+}
