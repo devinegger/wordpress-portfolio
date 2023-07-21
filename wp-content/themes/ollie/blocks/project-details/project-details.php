@@ -27,9 +27,9 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 // Load values and assign defaults.
-$project_type           = get_field( 'project_type', $post_id ) ?: 'project type';
-$github_url             = get_field( 'github_url', $post_id ) ?: 'github url';
-$live_url               = get_field( 'live_url', $post_id ) ?: 'live url';
+$project_type           = get_field( 'project_type', $post_id );
+$github_url             = get_field( 'github_url', $post_id ) ?: '';
+$live_url               = get_field( 'live_url', $post_id ) ?: '';
 
 ?>
 
@@ -39,10 +39,10 @@ $live_url               = get_field( 'live_url', $post_id ) ?: 'live url';
         <p><?php echo $project_type ?></p>
     </div>
     <div class="links">
-        <?php if ( $live_url ) : ?>
+        <?php if ( $live_url !== '' ) : ?>
             <a href="<?php echo $live_url ?>" target="_blank">View Live Site</a>
         <?php endif; ?>
-        <?php if ( $github_url ) : ?>
+        <?php if ( $github_url !== '' ) : ?>
             <a href="<?php echo $github_url ?>" target="_blank">View on GitHub</a>
         <?php endif; ?>
     </div>
