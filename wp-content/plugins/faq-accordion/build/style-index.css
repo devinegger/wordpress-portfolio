@@ -3,16 +3,19 @@
   \***************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 .wp-block-create-block-faq-accordion {
-  box-shadow: 0 5px 0 -1px #2292AB, 0 7px 0 0px #D4E8EC;
-  border: 2px solid #D4E8EC;
+  box-shadow: 0 6px 4px -1px var(--wp--preset--color--primary), 0 8px 2px 0px var(--wp--preset--color--primary-accent);
+  border: 2px solid var(--wp--preset--color--primary-accent);
   background-color: #fff;
   border-radius: 2rem;
   padding: 1rem;
   transition: all 300ms ease;
   margin-top: 1.75rem !important;
 }
+.wp-block-create-block-faq-accordion:hover {
+  box-shadow: 0 3px 2px -1px var(--wp--preset--color--primary), 0 5px 1px 0px var(--wp--preset--color--primary-accent);
+}
 .wp-block-create-block-faq-accordion.expanded {
-  box-shadow: 0 8px 0 -1px #2292AB, 0 10px 0 0px #D4E8EC;
+  box-shadow: 0 8px 4px -1px var(--wp--preset--color--primary), 0 10px 2px 0px var(--wp--preset--color--primary-accent);
 }
 .wp-block-create-block-faq-accordion__heading {
   margin: 0;
@@ -30,7 +33,7 @@
 }
 .wp-block-create-block-faq-accordion__heading button::after {
   content: "▾";
-  color: #2292AB;
+  color: var(--wp--preset--color--primary);
   transition: transform 450ms ease;
 }
 .wp-block-create-block-faq-accordion__heading button[aria-expanded=true]::after {
