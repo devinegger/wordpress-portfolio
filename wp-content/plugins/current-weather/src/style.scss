@@ -1,0 +1,64 @@
+@import "flickity";
+
+.wp-block-create-block-current-weather {
+  &__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 2rem;
+	overflow: hidden;
+	&.flickity-enabled {
+	  height: 300px;
+	  display: block;
+	}
+  }
+
+  &__pill {
+	padding: 2.5rem 1rem;
+	border-radius: 4rem;
+	background-color: var(--wp--preset--color--tertiary);
+	text-align: center;
+
+	&.flickity-cell {
+	  height: 260px;
+	  margin: 0 0.5rem;
+	}
+  }
+
+  &__day-name {
+	color: var(--wp--preset--color--primary);
+	margin: 0;
+	font-weight: 600;
+	border-bottom: 1px solid var(--wp--preset--color--main);
+	text-transform: lowercase;
+  }
+
+  &__icon {
+	svg {
+		width: 100px;
+		height: auto;
+	}
+	padding: .5rem;
+  }
+
+  &__temps {
+	display: flex;
+	justify-content: space-evenly;
+	& > * {
+	  font-weight: 600;
+	  font-size: 1.5rem;
+	  &:after {
+		content: "\00B0";
+	  }
+	}
+  }
+
+  &__day {
+	color: var(--wp--preset--color--primary);
+  }
+
+  &__night {
+	color: var(--wp--preset--color--secondary);
+  }
+}

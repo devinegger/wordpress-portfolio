@@ -30,6 +30,7 @@
 !wp-content/themes/ollie/
 !wp-content/plugins/destination-heading
 !wp-content/plugins/faq-accordion
+!wp-content/plugins/current-weather
 
 # Log files
 *.log

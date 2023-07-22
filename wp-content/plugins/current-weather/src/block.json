@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/current-weather",
+	"version": "1.0.0",
+	"title": "Current Weather",
+	"category": "widgets",
+	"icon": "palmtree",
+	"description": "A widget to display the 7 day weather for a given zip",
+	"attributes": {
+		"location": {
+		  "type": "string",
+		  "selector": "wp-block-create-block-current-weather__location"
+		},
+		"locationName": {
+		  "type": "string"
+		},
+		"latitude": {
+		  "type": "integer"
+		},
+		"longitude": {
+		  "type": "integer"
+		}
+	  },
+	"supports": {
+		"html": false,
+		"align": ["full", "wide"]
+	},
+	"textdomain": "current-weather",
+	"viewScript": "file:view.js",
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"style": "file:style-index.css"
+}
