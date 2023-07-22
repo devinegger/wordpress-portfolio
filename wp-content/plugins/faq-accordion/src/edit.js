@@ -11,7 +11,11 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText, BlockControls } from '@wordpress/block-editor';
+
+import { useEffect, useState } from '@wordpress/element';
+
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -19,6 +23,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+import "./style.scss";
 import './editor.scss';
 
 /**
@@ -29,10 +34,59 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit(props) {
+	// Get the attributes and function to set attributes from props
+	const { attributes, setAttributes, clientId } = props;
+	// Get the Block Wrapper props
+	const blockProps = useBlockProps();
+	// Get the heading text and set up a local state for it
+	const [heading, setHeading] = useState(attributes.heading);
+
+	// Get the image and set up a local state for it
+	const [text, setText] = useState(attributes.text);
+
+	// super work around for storing a unique id so that I can USE it 
+	// on the frontend, being a good A11y
+	useEffect(() => {
+		setAttributes({id: clientId});
+	}, [clientId]);
+
+
+	// This is a function that is passed to the RichText component.
+	// It is called when the heading text is changed.
+	// It sets the local state and the attributes.
+	function updateHeadingContent(content) {
+		setAttributes({ heading: content });
+		setHeading(content);
+	}
+
+	// This is a function that is passed to the RichText component.
+	// It is called when the heading text is changed.
+	// It sets the local state and the attributes.
+	function updateTextContent(content) {
+		setAttributes({ text: content });
+		setText(content);
+	}
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Faq Accordion – hello from the editor!', 'faq-accordion' ) }
-		</p>
+		<div {...blockProps}>
+			<div className="accordion">
+					<RichText
+						className="wp-block-create-block-faq-accordion__heading"
+						tagName="h3"
+						placeholder={__("Enter FAQ heading..", "cend")}
+						value={heading}
+						onChange={updateHeadingContent}
+					/>
+				{ props.isSelected && 
+						<RichText
+							className="wp-block-create-block-faq-accordion__text"
+							tagName="p"
+							placeholder={__("Enter FAQ text..." , "cend")}
+							value={text}
+							onChange={updateTextContent} />}
+						
+			</div>
+		</div>
 	);
 }

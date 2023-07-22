@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +15,25 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save( { attributes }) {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Faq Accordion – hello from the saved content!' }
-		</p>
+		<div { ...useBlockProps.save() }>
+			<h3 className="wp-block-create-block-faq-accordion__heading">
+				<button 
+					className="link-button"
+					id={`${attributes.id}-button`} 
+					aria-controls={`${attributes.id}-text`} 
+					aria-expanded="false">
+					{attributes.heading}
+				</button>
+			</h3>
+			<RichText.Content
+				id={`${attributes.id}-text`}
+				aria-labelledby={`${attributes.id}-button`}
+				className="wp-block-create-block-faq-accordion__text"
+				tagName="p"
+				value={attributes.text}
+			/>
+		</div>
 	);
 }
