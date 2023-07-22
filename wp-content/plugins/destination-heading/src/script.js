@@ -1,10 +1,10 @@
 const cities = [
-  "dallas",
-  "sante fe",
-  "sacramento",
-  "phoenix",
-  "des moines",
-  "travelers rest",
+  "Dallas",
+  "Sante Fe",
+  "Sacramento",
+  "Phoenix",
+  "Des Moines",
+  "Greenville",
 ];
 
 window.addEventListener( 'DOMContentLoaded', () => {

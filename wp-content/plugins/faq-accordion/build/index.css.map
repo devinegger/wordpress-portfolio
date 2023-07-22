@@ -1,1 +1,0 @@
-{"version":3,"file":"index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://faq-accordion/./src/editor.scss"],"sourcesContent":[".wp-block-create-block-faq-accordion {\n\t&__text {\n\t\tdisplay: block;\n\t}\n}\n"],"names":[],"sourceRoot":""}
